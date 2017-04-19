@@ -1,0 +1,14 @@
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$.ajax({
+    type: 'get',
+    url: 'http://localhost:8888/123',
+    success: function(data) {
+        console.log(data);
+    },
+    error: function() {
+        console.log('error');
+    }
+})
+</script>
+</head>
