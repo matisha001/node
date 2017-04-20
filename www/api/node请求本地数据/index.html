@@ -1,0 +1,19 @@
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$.ajax({
+    url: "http://localhost:8888",
+    type: "GET",
+    dataType: "json", //因为是调用nodeJS返回的json数据，所以必须使用binary类型
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        var s1 = XMLHttpRequest;
+        var s2 = textStatus;
+        var s3 = errorThrown;
+        console.log(s1, s2, s3)
+    },
+    success: function(data) {
+        console.log(data)
+    }
+
+});
+</script>
+</head>
