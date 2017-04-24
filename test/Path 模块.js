@@ -15,3 +15,8 @@ console.log('resolve : ' + path.resolve('main.js'));
 
 // 路径中文件的后缀名
 console.log('ext name : ' + path.extname('main.js'));
+
+//
+var data1 = path.basename('/foo/index.html');
+var data2 = path.basename('/foo/index.html','.html');
+console.log(data1 + ' "and" ' + data2);

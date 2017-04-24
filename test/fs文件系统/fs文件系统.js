@@ -33,6 +33,24 @@ fs.writeFile('test.txt', '我是通过写入的文件内容！',  function(err) 
    });
 });
 */
+/*异步模式 追加写入文件fs.appendFile
+fs.appendFile('test.txt', '数据被添加到文件的尾部', function (err) {
+   if (err) throw err;
+    console.log('数据被添加到文件的尾部'); 
+});
+*/
+/*异步模式  文件是否存在fs.exists
+fs.exists('/etc/passwd', function (exists) {
+  console.log(exists ? "存在" : "不存在!");
+});
+*/
+/* 修改文件名 fs.rename
+fs.rename("1.txt","2.txt",function(err){
+   if (err) throw err;
+   console.log('Successful modification,');
+});
+*/
+
 
 /*异步模式 打开文件fs.open 读取文件fs.read  关闭文件fs.close  截取文件fs.ftruncate
 var buf = new Buffer(1024);
@@ -77,7 +95,7 @@ fs.readdir("./matisha/",function(err, files){
 });
 */
 
-/*删除目录fs.rmdir*/
+/*删除目录fs.rmdir
 fs.rmdir("./matisha",function(err){
    if (err) return console.error(err);
    fs.readdir("./",function(err, files){
@@ -87,7 +105,7 @@ fs.rmdir("./matisha",function(err){
       });
    });
 });
-
+*/
 
 
 
