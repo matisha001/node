@@ -45,6 +45,16 @@ console.log(util.inspect(obj, true));
 console.log(util.inspect(obj, true,1)); 
 console.log(util.inspect(obj, true,1,true)); 
 */
+/*util.format
+
+
+*/
+var result = util.format('%s:%s', 'foo');
+console.log(result);
+result = util.format('%s:%s', 'foo', 'bar', 'baz');
+console.log(result);
+result = util.format(1, 2, 3);
+console.log(result);
 /*util.isArray(object)
 util.isArray([])
 util.isArray(new Array)
