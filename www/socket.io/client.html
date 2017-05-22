@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script>
+    /*连接服务器
+		window.onload = function() {
+	        var socket = io.connect('/');
+	        socket.on('connect', function() {
+	            document.write('连接成功!');
+	        });
+	    };
+    */
+    //客户端向服务端发送消息
+    var socket = io.connect('/');
+    socket.on('connect', function() {
+        socket.send('hello world!');//客户端连接成功后发送消息'hello world!'
+    });
+    socket.on('message', function(data) {
+        alert(data);
+    });
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
