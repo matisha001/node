@@ -1,0 +1,8 @@
+{
+    "a1": { "pwd_s": "a", "role": 1, "service": "外卖" },
+    "b1": { "pwd_s": "b", "role": 1, "service": "淘宝客服" },
+    "c1": { "pwd_s": "c", "role": 1, "service": "快递" },
+    "a": { "pwd_u": "a", "role": 2, "tel": "15878988909" },
+    "b": { "pwd_u": "b", "role": 2, "tel": "13700002345" },
+    "c": { "pwd_u": "c", "role": 2, "tel": "18989001239" }
+}

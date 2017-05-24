@@ -5,7 +5,6 @@ module.exports = function(app){
         res.render('login');
     });
     app.post('/login', function(req,res){
-        console.log('用户登录~');
         var name = req.body.name ;
         var user = users[name];
         if(user && user.pwd_s == req.body.pwd && "1" == req.body.role){
