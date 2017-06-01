@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>addcommodity</title>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.2/??flexible_css.js,flexible.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </style>
+    <script type="text/javascript">
+    function addcommodity() {
+        var name = $('#cname').val(),
+            price = $('#cprice').val();
+        var data = {
+            "name": name,
+            price: price,
+            "imgSrc": "http://www.na5zhe.com/upload/image/201705/87bbaf26-9677-43ee-93de-b3db3015a7ae.png"
+        };
+        $.ajax({
+            url: '/addcommodity',
+            type: 'POST',
+            data: data,
+            success: function(data, status) {
+                if (status == 'success') {
+                    alert('添加成功！')
+                }
+            },
+            error: function(data, err) {
+                alert('添加失败！')
+            }
+        });
+    }
+    </script>
+</head>
+
+<body>
+    <div style="margin:50px auto;width: 900px;">
+        <div class="panel-heading" style="height: 40px;">
+            <span style="font-size:20px; font-weight:bold;">添加商品</span>
+            <div style="float:right;">
+                <a class="btn  btn-xs btn-success" href="home" style="margin-left: 400px;">返回商品页</a>
+            </div>
+        </div>
+        <form action="#" role="form" method="post">
+            <input style="margin-top: 30px;" id="cname" type="text" class="form-control" name="cname" placeholder="商品名称" />
+            <input style="margin-top: 30px;" id="cprice" class="form-control" name="cprice" placeholder="商品价格" />
+            <input style="margin-top: 30px;" type="button" class="btn btn-success btn-block" onclick="addcommodity()" value="添 加" />
+        </form>
+    </div>
+</body>
+
+</html>

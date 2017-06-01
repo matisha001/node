@@ -1,4 +1,4 @@
-module.exports = function ( app ) {
+module.exports = function(app) {
     //查看购物车商品
     app.get('/cart', function(req, res) {
         var Cart = global.dbHelper.getModel('cart');
@@ -11,7 +11,7 @@ module.exports = function ( app ) {
             });
         }
     });
-    //添加购物车商品
+        //添加购物车商品
     app.get("/addToCart/:id", function(req, res) {
        //req.params.id 获取商品ID号
         if(!req.session.user){
@@ -53,8 +53,17 @@ module.exports = function ( app ) {
             });
         }
     });
-
-    //删除购物车商品
+        //购物车结算
+    app.post("/cart/clearing",function(req,res){
+        var Cart = global.dbHelper.getModel('cart');
+        Cart.update({"_id":req.body.cid},{$set : { cQuantity : req.body.cnum,cStatus:true }},function(error,doc){
+            //更新成功返回1  失败返回0
+            if(doc > 0){
+                res.send(200);
+            }
+        });
+    });
+        //删除购物车商品
     app.get("/delFromCart/:id", function(req, res) {
         //req.params.id 获取商品ID号
         var Cart = global.dbHelper.getModel('cart');
@@ -65,18 +74,4 @@ module.exports = function ( app ) {
             }
         });
     });
-
-    //购物车结算
-    app.post("/cart/clearing",function(req,res){
-        var Cart = global.dbHelper.getModel('cart');
-        Cart.update({"_id":req.body.cid},{$set : { cQuantity : req.body.cnum,cStatus:true }},function(error,doc){
-            //更新成功返回1  失败返回0
-            if(doc > 0){
-                res.send(200);
-            }
-        });
-    });
-
-
 }
-
